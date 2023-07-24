@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 3</title>
+    <style>
+      body {
+        background-color: lightgray;
+        font-size: 20px;
+        font-family: 'Times New Roman', Times, serif;
+      }
+      .header {
+        max-width: 1425px;
+        margin: 0 auto;
+        background-color: rgb(31, 199, 131);
+        padding: 20px;
+        text-align: center;
+        border-radius: 10px;
+        font-size: 30px;
+      }
+      .header > p {
+        font-size: 24px;
+      }
+      .content {
+        max-width: 950px;
+        margin: 10px auto;
+        background-color: rgb(31, 199, 131);
+        border-radius: 10px;
+        text-align: center;
+        padding: 5px 0;
+        font-size: 24px;
+      }
+
+      .btn {
+        max-width: 300px;
+        margin: 30px auto;
+      }
+      .button {
+        display: block;
+        text-decoration: none;
+        color: black;
+        background-color: rgb(31, 199, 131);
+        margin: 15px 25px;
+        text-align: center;
+        font-size: 22px;
+        padding: 10px 20px;
+        border-radius: 7px;
+      }
+      .button:hover {
+        background-color: rgb(63, 112, 210);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div>Задача 2</div>
+      <p>
+        Реалізувати бінарний пошук (розглядали на попередніх уроках) з
+        використанням рекурсивного алгоритму.
+      </p>
+    </div>
+    <div class="content">
+      <p>Відповідь до задачі:</p>
+      <script>
+        let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        let start = 0
+        let end = arr.length - 1
+
+        function searchElement(arr, el, start, end) {
+          let middle = Math.floor((start + end) / 2)
+          while (start <= end) {
+            if (arr[middle] === el) return middle
+            if (arr[middle] < el) return searchElement(arr, el, middle + 1, end)
+            if (arr[middle] > el)
+              return searchElement(arr, el, start, middle + 1)
+          }
+          return false
+        }
+
+        let element = searchElement(arr, 8, start, end)
+        if (element !== false)
+          document.write(`Шуканий елемент - ${element} <br>`)
+      </script>
+    </div>
+    <div class="btn">
+      <a class="button" href="./index.html">На головну</a>
+    </div>
+  </body>
+</html>

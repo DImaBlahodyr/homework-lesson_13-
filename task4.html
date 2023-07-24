@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 4</title>
+    <style>
+      body {
+        background-color: lightgray;
+        font-size: 20px;
+        font-family: 'Times New Roman', Times, serif;
+      }
+      .header {
+        max-width: 1425px;
+        margin: 0 auto;
+        background-color: rgb(31, 199, 131);
+        padding: 20px;
+        text-align: center;
+        border-radius: 10px;
+        font-size: 30px;
+      }
+      .header > p {
+        font-size: 24px;
+      }
+      .content {
+        max-width: 950px;
+        margin: 10px auto;
+        background-color: rgb(31, 199, 131);
+        border-radius: 10px;
+        text-align: center;
+        padding: 5px 0;
+        font-size: 24px;
+      }
+
+      .btn {
+        max-width: 300px;
+        margin: 30px auto;
+      }
+      .button {
+        display: block;
+        text-decoration: none;
+        color: black;
+        background-color: rgb(31, 199, 131);
+        margin: 15px 25px;
+        text-align: center;
+        font-size: 22px;
+        padding: 10px 20px;
+        border-radius: 7px;
+      }
+      .button:hover {
+        background-color: rgb(63, 112, 210);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div>Задача 3</div>
+      <p>
+        З використанням замикань розробити ітератор, тобто функцію, що буде
+        поступово за окремими викликами видавати по одне значення від заданого
+        мінімального до заданого максимального. Якщо значення досягне
+        максимального, то наступним буде мінімальне значення. З використанням
+        цієї функції реалізувати перебір номерів місяців.
+      </p>
+    </div>
+    <div class="content">
+      <p>Відповідь до задачі:</p>
+      <script>
+        let monthNum = 0
+        let firstMonth = 1
+        let lastMonth = 12
+
+        function monthIterator(monthNum, firstMonth, lastMonth) {
+          function nextMonth() {
+            if (monthNum === lastMonth) monthNum = 1
+            else monthNum++
+            return monthNum
+          }
+          return nextMonth
+        }
+
+        let month = monthIterator(0, firstMonth, lastMonth)
+        for (let i = 0; i < 12; i++) {
+          document.write(`Місяць №${month()}<br>`)
+        }
+
+        let arrInsert = [...arr]
+
+        function insertSort(arrInsert) {
+          for (let k = 1; k < arrInsert.length; k++) {
+            let currentElem = arrInsert[k]
+            let i = k - 1
+            while (i >= 0 && arrInsert[i] > currentElem) {
+              arrInsert[i + 1] = arrInsert[i]
+              i = i - 1
+            }
+            arrInsert[i + 1] = currentElem
+            document.write(`${arrInsert}<br>`)
+          }
+        }
+        insertSort(arrInsert)
+      </script>
+    </div>
+    <div class="btn">
+      <a class="button" href="./index.html">На головну</a>
+    </div>
+  </body>
+</html>

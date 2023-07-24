@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 5</title>
+    <style>
+      body {
+        background-color: lightgray;
+        font-size: 20px;
+        font-family: 'Times New Roman', Times, serif;
+      }
+      .header {
+        max-width: 1425px;
+        margin: 0 auto;
+        background-color: rgb(31, 199, 131);
+        padding: 20px;
+        text-align: center;
+        border-radius: 10px;
+        font-size: 30px;
+      }
+      .header > p {
+        font-size: 24px;
+      }
+
+      .btn {
+        max-width: 300px;
+        margin: 30px auto;
+      }
+      .button {
+        display: block;
+        text-decoration: none;
+        color: black;
+        background-color: rgb(31, 199, 131);
+        margin: 15px 25px;
+        text-align: center;
+        font-size: 22px;
+        padding: 10px 20px;
+        border-radius: 7px;
+      }
+      .button:hover {
+        background-color: rgb(63, 112, 210);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div>Задача 5</div>
+      <p>
+        Тренажер додавання. Кожні 10 секунд користувачу задають випадковий
+        приклад з додавання двох цифр і робиться перевірка.
+      </p>
+    </div>
+    <div class="content">
+      <script>
+        function sumNumbers() {
+          setInterval(
+            () => {
+              let num1 = 1 + Math.floor(Math.random() * 50)
+              let num2 = 1 + Math.floor(Math.random() * 50)
+
+              let result = 0
+              let answer = parseFloat(prompt(`Скільки буде ${num1} + ${num2}`))
+              result = num1 + num2
+              result === answer
+                ? alert('Відповідь правильна')
+                : alert(`Ні, не вірно. Правильна відповідь ${result}`)
+            },
+
+            10000
+          )
+        }
+
+        sumNumbers()
+      </script>
+    </div>
+    <div class="btn">
+      <a class="button" href="./index.html">На головну</a>
+    </div>
+  </body>
+</html>
